@@ -1,6 +1,6 @@
 <?php
-$cfg_servidor="localhost";
-$cfg_usuario="pepe";
-$cfg_password="pepa";
-$cfg_basephp1="hagoprueba";
+$cfg_servidor="mysql";
+$cfg_usuario="user";
+$cfg_password="pass";
+$cfg_basephp1="prueba";
 ?>
