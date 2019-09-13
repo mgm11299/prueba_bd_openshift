@@ -35,13 +35,26 @@ $crear.=")type=MyISAM";
 /*incluimos los parámetros de conexión */
 include('mysqli.inc.php');
 
+/*
  $conexion=@mysqli_connect ($cfg_servidor,$cfg_usuario,$cfg_password,$cfg_basephp1);
+
     if(!mysqli_connect_errno()==0){
         print "<br>No ha podido realizarse la conexión mediante procesos<br>";
         print "Error número: ". mysqli_connect_errno()." equivalente a: ". mysqli_connect_error();
         exit();
     }
-    # gestion de la base de datos. Los parámetros requieren el ordn aquí indicado
+    */
+    
+    try {
+    $mbd = new PDO('mysql:host=localhost;dbname=prueba', $usuario, $contraseña);
+    }
+    catch (PDOException $e) {
+    print "¡Error!: " . $e->getMessage() . "<br/>";
+    die();
+    }
+    
+    
+     # gestion de la base de datos. Los parámetros requieren el ordn aquí indicado
 
     if(mysqli_query($conexion,$crear)){
             print "La tabla ha sido CREADA";
@@ -50,6 +63,7 @@ include('mysqli.inc.php');
             print "Error : ". mysqli_error($conexion);
             exit();
     }
+    
     mysqli_close($conexion);
     
     
