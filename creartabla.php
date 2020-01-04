@@ -35,7 +35,7 @@ $crear.=")type=MyISAM";
 /*incluimos los parámetros de conexión */
 include('mysqli.inc.php');
 
-/*
+
  $conexion=@mysqli_connect ($cfg_servidor,$cfg_usuario,$cfg_password,$cfg_basephp1);
 
     if(!mysqli_connect_errno()==0){
@@ -43,8 +43,9 @@ include('mysqli.inc.php');
         print "Error número: ". mysqli_connect_errno()." equivalente a: ". mysqli_connect_error();
         exit();
     }
-    */
+
     
+    /*
     try {
     $mbd = new PDO('mysql:host=localhost;dbname=prueba', $usuario, $contraseña);
     }
@@ -53,7 +54,7 @@ include('mysqli.inc.php');
     die();
     }
     
-    
+    */
      # gestion de la base de datos. Los parámetros requieren el ordn aquí indicado
 
     if(mysqli_query($conexion,$crear)){
