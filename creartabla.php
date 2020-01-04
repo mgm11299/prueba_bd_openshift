@@ -47,7 +47,7 @@ include('mysqli.inc.php');
     
 
     try {
-    $mbd = new PDO($cfg_servidor, $cfg_basephp1, $cfg_usuario, $cfg_password);
+    $mbd = new PDO('mysql:host=mysql;dbname=prueba', $cfg_usuario, $cfg_password);
     }
     catch (PDOException $e) {
     print "¡Error!: " . $e->getMessage() . "<br/>";
